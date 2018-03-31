@@ -1,0 +1,34 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls__button {
+  width: 48%;
+  margin-right: 10px;
+  padding: 6px 11px;
+  color: white;
+  background-color: $blue;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: lighten($blue, 10%);
+  }
+
+  &:active {
+    box-shadow: inset 0 0 3px 0 darken($blue, 20%);
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .controls__button {
+    width: auto;
+  }
+}

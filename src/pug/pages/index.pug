@@ -1,0 +1,26 @@
+extends ../_template
+
+block variables
+  -
+    var title = 'Календарь';
+
+block content
+  header.header
+    .container.header-wrapper
+      .header__controls.controls
+        button.controls__button Добавить
+        button.controls__button Обновить
+      .header__search.search
+        button.search__button
+        input.search__field(type="text", placeholder="Событие, дата или участник")
+  section.calendar
+    h2.visually-hidden Календарь
+    .container
+      header.calendar__header
+        .calendar__controls
+          .calendar__date
+            button.calendar__date-btn.calendar__date-btn--prev
+            span.calendar__date-text
+            button.calendar__date-btn.calendar__date-btn--next
+          button.calendar__today Сегодня
+      ul.calendar__list

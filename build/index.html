@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Календарь</title>
+    <link rel="stylesheet" href="css/style.min.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header-wrapper">
+          <div class="header__controls controls">
+            <button class="controls__button">Добавить</button>
+            <button class="controls__button">Обновить</button>
+          </div>
+          <div class="header__search search">
+            <button class="search__button"></button>
+            <input class="search__field" type="text" placeholder="Событие, дата или участник"/>
+          </div>
+        </div>
+      </header>
+      <section class="calendar">
+        <h2 class="visually-hidden">Календарь</h2>
+        <div class="container">
+          <header class="calendar__header">
+            <div class="calendar__controls">
+              <div class="calendar__date">
+                <button class="calendar__date-btn calendar__date-btn--prev"></button><span class="calendar__date-text"></span>
+                <button class="calendar__date-btn calendar__date-btn--next"></button>
+              </div>
+              <button class="calendar__today">Сегодня</button>
+            </div>
+          </header>
+          <ul class="calendar__list"></ul>
+        </div>
+      </section>
+    </div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

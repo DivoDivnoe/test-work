@@ -1,0 +1,19 @@
+.header {
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px 0 #d1d1d1;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 10px 0;
+}
+
+@media screen and (min-width: 540px) {
+  .header-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 56px 0 19px 0;
+  }
+}
