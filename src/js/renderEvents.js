@@ -32,9 +32,9 @@ const renderEvent = (eventBlock, event) => {
   const text = document.createElement('p');
 
   eventBlock.classList.add('calendar__item--event');
-  content.classList.add('calendar__item-content');
-  title.classList.add('calendar__item-note');
-  text.classList.add('calendar__item-text');
+  content.classList.add('event');
+  title.classList.add('event__note');
+  text.classList.add('event__text');
 
   title.textContent = event.title;
   text.textContent = event.names.join(', ');

@@ -2,6 +2,7 @@ import calendar from './myCalendar';
 import {renderCalendar, renderDate} from './render';
 import fetchEvents from './fetch';
 import {renderEvents, findActualEvents} from './renderEvents';
+import initPopup from './popup';
 
 document.addEventListener('DOMContentLoaded', () => {
   const calendarBlock = document.querySelector('.calendar');
@@ -16,10 +17,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDate(dateText, calendar);
     renderCalendar(calendarList, calendar);
     fetchEvents(res => {
-      renderEvents(
-        calendarBlock.querySelectorAll('.calendar__item'),
-        findActualEvents(res, calendar)
+      const calendarItems = calendarBlock.querySelectorAll('.calendar__item');
+
+      renderEvents(calendarItems, findActualEvents(res, calendar));
+
+      const eventBlocks = [...calendarItems].filter(item =>
+        item.classList.contains('calendar__item--event')
       );
+      console.log(eventBlocks);
+
+      if (eventBlocks) {
+        initPopup(eventBlocks);
+      }
     });
   };
 

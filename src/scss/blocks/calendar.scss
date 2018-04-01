@@ -66,13 +66,14 @@
 }
 
 .calendar__item {
+  display: flex;
+  flex-direction: column;
   width: calc(100% / 7);
   padding: 7px;
   font-size: 13px;
   border-top: 1px solid #dcdcdc;
   border-left: 1px solid #dcdcdc;
   transition: background-color 0.15s;
-  z-index: 0;
 
   &:nth-child(7n) {
     border-right: 1px solid #dcdcdc;
@@ -80,10 +81,6 @@
 
   &:last-child {
     border-right: 1px solid #dcdcdc;
-  }
-
-  &:not(.calendar__item--event):hover {
-    background-color: #f0f0f0;
   }
 
   &--inactive {
@@ -96,14 +93,7 @@
   }
 
   &--event {
-    position: relative;
     background-color: lighten($blue, 50%);
-
-    &:hover {
-      .calendar__item-content {
-        top: 0;
-      }
-    }
   }
 }
 
@@ -113,31 +103,10 @@
   text-overflow: ellipsis;
 }
 
-.calendar__item-content {
-  position: absolute;
-  top: -99999px;
-  left: 0;
-  right: 0;
-  height: 100%;
-  margin-top: 5px;
-  padding: 7px;
-  padding-top: 15px;
-  color: black;
-  z-index: 10;
-}
-
-.calendar__item-note {
-  margin: 0;
-  font-size: 13px;
-}
-
-.calendar__item-text {
-  margin: 0;
-}
-
 @media screen and (min-width: 800px) {
-  .calendar__item-content {
-    position: static;
-    padding: 0;
+  .calendar__item {
+    &:not(.calendar__item--event):hover {
+      background-color: #f0f0f0;
+    }
   }
 }
