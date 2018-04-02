@@ -1,33 +1,4 @@
-const weakDays = [
-  {
-    long: 'Понедельник',
-    short: 'ПН'
-  },
-  {
-    long: 'Вторник',
-    short: 'ВТ'
-  },
-  {
-    long: 'Среда',
-    short: 'СР'
-  },
-  {
-    long: 'Четверг',
-    short: 'ЧТ'
-  },
-  {
-    long: 'Пятница',
-    short: 'ПТ'
-  },
-  {
-    long: 'Суббота',
-    short: 'СБ'
-  },
-  {
-    long: 'Воскресенье',
-    short: 'ВС'
-  }
-];
+const weakDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
 const months = [
   'Январь',
@@ -44,8 +15,8 @@ const months = [
   'Декабрь'
 ];
 
-export const renderDate = (container, calendarObj) => {
-  container.textContent = `${months[calendarObj.month]} ${calendarObj.year}`;
+export const renderDate = (dateText, calendarObj) => {
+  dateText.textContent = `${months[calendarObj.month]} ${calendarObj.year}`;
 };
 
 export const renderCalendar = (ul, calendarObj) => {
@@ -58,7 +29,7 @@ export const renderCalendar = (ul, calendarObj) => {
 
   for (let i = firstWeakDay - 1; i >= 1; i--) {
     const classList = ['calendar__item', 'calendar__item--inactive'];
-    const template = `${weakDays[i - 1].long}, ${prevMonthDays}`;
+    const template = `${weakDays[i - 1]}, ${prevMonthDays}`;
 
     renderBlock(fragment, classList, template, false);
 
@@ -71,9 +42,7 @@ export const renderCalendar = (ul, calendarObj) => {
         ? ['calendar__item', 'calendar__item--active']
         : ['calendar__item'];
     const template =
-      firstWeakDay + i - 1 <= 7
-        ? `${weakDays[firstWeakDay + i - 2].long}, ${i}`
-        : i;
+      firstWeakDay + i - 1 <= 7 ? `${weakDays[firstWeakDay + i - 2]}, ${i}` : i;
 
     renderBlock(fragment, classList, template);
   }
