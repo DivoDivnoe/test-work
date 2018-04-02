@@ -56,6 +56,10 @@
   background-color: transparent;
   border: 1px solid #dcdcdc;
   cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 }
 
 .calendar__list {
